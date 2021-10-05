@@ -2,18 +2,14 @@ package input
 
 import "errors"
 
-type Input interface {
-	CheckInput() error
-}
-
-func CheckInput(s []string) error {
-	if len(s) == 0 {
+func CheckInput(input []string) error {
+	if len(input) == 0 {
 		err := errors.New("not enough arguments\nuse the following format: ./alarmclock HH:MM")
 		return err
-	} else if len(s) > 2 {
+	} else if len(input) > 2 {
 		err := errors.New("too many arguments\nuse the following format: ./alarmclock HH:MM")
 		return err
-	} else if len(s) == 2 {
+	} else if len(input) == 2 {
 		//check for am or pm
 
 	}
